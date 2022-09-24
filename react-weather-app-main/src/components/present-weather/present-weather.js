@@ -1,7 +1,9 @@
 import React from "react";
+import { timeChange } from "../../utils/extrafunctions";
+import BarChart from "../graph/Barchart";
 import "./present-weather.css";
 
-const CurrentWeather = ({ data}) => {
+const CurrentWeather = ({ data }) => {
   console.log(data);
   return (
     <div className="main-weather-div">
@@ -28,9 +30,7 @@ const CurrentWeather = ({ data}) => {
                 <span className="div-label">Pressure</span>
               </div>
               <div>
-                <span className="div-value">
-                  {data.main.pressure} hPa
-                </span>
+                <span className="div-value">{data.main.pressure} hPa</span>
               </div>
             </div>
             <div className="div-row-12">
@@ -63,7 +63,35 @@ const CurrentWeather = ({ data}) => {
               </div>
             </div>
           </div>
-          <div className="div-row-2">{/* <BarChart /> */}</div>
+
+          <div className="div-row-1">
+            <div className="div-row-11 sunrise-div">
+              <div>
+                <span className="div-label">Sunrise</span>
+              </div>
+              <div>
+                <span className="div-value">
+                  {timeChange(data.sys.sunrise)}am
+                </span>
+              </div>
+            </div>
+            <div className="div-row-12 sunset-div">
+              <div>
+                <span className="div-label">Sunset</span>
+              </div>
+              <div>
+                <span className="div-value">
+                  {timeChange(data.sys.sunset)}pm
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div className="div-row-2">
+            <div className="graph-div">
+              <BarChart data={data} />
+            </div>
+          </div>
         </div>
       </div>
     </div>

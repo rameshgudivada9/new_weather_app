@@ -89,3 +89,14 @@
 .div-label.top {
   border-bottom: 1px solid #fff;
 }
+.graph-div {
+  width: 100%;
+}
+.sunset-div {
+  text-align: right;
+  /* border: 1px solid red; */
+  background-color: white;
+}
+.sunrise-div {
+  background-color: white;
+}
