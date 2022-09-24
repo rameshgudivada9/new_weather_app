@@ -12,12 +12,12 @@ const Search = ({ onSearchChange }) => {
     )
       .then((response) => response.json())
       .then((response) => {
-        console.log(response.data)
+        console.log(response.data);
         return {
           options: response.data.map((city) => {
             return {
               value: `${city.latitude} ${city.longitude}`,
-              label: `${city.name}, ${city.countryCode}`,
+              label: `${city.region},IN`,
             };
           }),
         };

@@ -33,10 +33,10 @@ const BarChart = ({ data }) => {
     Math.round(data.main.temp),
     10,
   ];
-  function getMultipleRandom(arr, num) {
+  function getMultipleRandom(arr, value) {
     const shuffled = [...arr].sort(() => 0.5 - Math.random());
 
-    return shuffled.slice(0, num);
+    return shuffled.slice(0, value);
   }
   return (
     <div>
