@@ -58,7 +58,8 @@
 .daily-details-grid {
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   background-color: #f5f5f5;
-  margin: 1px;
+  margin: 3px;
+  border: 1px solid #c1e3f5;
 }
 
 .sub-item {

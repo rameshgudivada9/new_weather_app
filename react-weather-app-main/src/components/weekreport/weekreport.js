@@ -20,26 +20,26 @@ const Forecast = ({ data }) => {
   return (
     <>
       <Accordion allowZeroExpanded className="daily-item-main-div">
-        {data.list.splice(0, 7).map((item, idx) => (
-          <AccordionItem key={idx} className="full">
+        {data.list.splice(0, 7).map((ele, i) => (
+          <AccordionItem key={i} className="full">
             <AccordionItemHeading>
               <AccordionItemButton className="accordoinBTN">
                 <div className="daily-item">
                   <div>
                     {" "}
-                    <label className="day">{forecastDays[idx]}</label>
+                    <label className="day">{forecastDays[i]}</label>
                   </div>
                   <div>
                     {" "}
                     <label className="min-max">
-                      {Math.round(item.main.temp_max)}°
-                      {Math.round(item.main.temp_min)}°
+                      {Math.round(ele.main.temp_max)}°
+                      {Math.round(ele.main.temp_min)}°
                     </label>
                   </div>
                   <div>
                     {" "}
                     <img
-                      src={`icons/${item.weather[0].icon}.png`}
+                      src={`icons/${ele.weather[0].icon}.png`}
                       className="icon-small"
                       alt="weather"
                     />
@@ -47,7 +47,7 @@ const Forecast = ({ data }) => {
                   <div className="description">
                     {" "}
                     <label className="description">
-                      {item.weather[0].description}
+                      {ele.weather[0].description}
                     </label>
                   </div>
                 </div>
@@ -57,27 +57,27 @@ const Forecast = ({ data }) => {
               <div className="daily-details-grid">
                 <div className="sub-item">
                   <label>Pressure</label>
-                  <label>{item.main.pressure}</label>
+                  <label>{ele.main.pressure}</label>
                 </div>
                 <div className="sub-item">
                   <label>Humidity</label>
-                  <label>{item.main.humidity}</label>
+                  <label>{ele.main.humidity}</label>
                 </div>
                 <div className="sub-item">
                   <label>Clouds</label>
-                  <label>{item.clouds.all}%</label>
+                  <label>{ele.clouds.all}%</label>
                 </div>
                 <div className="sub-item">
                   <label>Wind speed</label>
-                  <label>{item.wind.speed} m/s</label>
+                  <label>{ele.wind.speed} m/s</label>
                 </div>
                 <div className="sub-item">
                   <label>Sea level</label>
-                  <label>{item.main.sea_level}m</label>
+                  <label>{ele.main.sea_level}m</label>
                 </div>
                 <div className="sub-item">
                   <label>Feels like</label>
-                  <label>{item.main.feels_like}°C</label>
+                  <label>{ele.main.feels_like}°C</label>
                 </div>
               </div>
             </AccordionItemPanel>
