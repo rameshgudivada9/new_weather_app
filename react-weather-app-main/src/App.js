@@ -2,7 +2,7 @@ import { useState } from "react";
 import Search from "./components/searchbar/searchbar";
 import CurrentWeather from "./components/present-weather/present-weather";
 import Forecast from "./components/weekreport/weekreport";
-import { WEATHER_API_URL, WEATHER_API_KEY } from "./Apidata";
+import { WEATHER_API_URL, WEATHER_API_KEY } from "./utils/Apidata";
 import "./App.css";
 
 function App() {
